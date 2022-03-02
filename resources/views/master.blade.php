@@ -24,8 +24,30 @@
 </body>
 <style>
        .custom-login{
-           height: 430px;
+           height: 480px;
            padding-top: 80px;
+       }
+       img.slider-img{
+           height: 400px !important;
+       }
+       .slider-text{
+           background-color:#46754d !important;
+       }
+       .trending-image{
+           height: 100px;
+       }
+       .trending-item{
+           float: left;
+           width: 20%;
+       }
+       .trending-wrapper{
+           margin: 30px;
+       }
+       .detail-img{
+           height: 200px;
+       }
+       .search-box{
+           width: 400px;
        }
        </style>
 </html>

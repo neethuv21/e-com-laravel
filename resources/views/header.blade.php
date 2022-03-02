@@ -1,6 +1,15 @@
+<?php 
+use App\Http\Controllers\productcontroller;
+$total=0;
+if(Session()->has('user')){
+$total=productcontroller::cartItem();
+}
+?>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Eshop</a>
+    <a class="navbar-brand" href="/">Eshop</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,8 +24,8 @@
         
         
         <li class="nav-item">
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form action="/search" class="d-flex">
+        <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         </li>
@@ -25,8 +34,26 @@
 
 
         <li class="nav-item ">
-          <a class="nav-link active" aria-current="page" href="#">Cart(0)</a>
+          <a class="nav-link active" aria-current="page" href="#">Cart({{$total}})</a>
+         
         </li>
+        @if(Session::has('user'))
+            
+          
+
+          <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    {{Session::get('user')['name']}}
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+    
+  </ul>
+  @else
+  <a class="nav-link active" aria-current="page" href="/login">Login</a>
+  @endif
+</div>
          </ul>
 
      
