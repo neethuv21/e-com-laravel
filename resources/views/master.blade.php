@@ -49,5 +49,10 @@
        .search-box{
            width: 400px;
        }
+       .cart-list-devider{
+           border-bottom: 1px solid #46754d;
+           margin-bottom: 20px;
+           padding-bottom: 20px;
+       }
        </style>
 </html>

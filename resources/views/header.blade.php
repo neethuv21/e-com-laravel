@@ -19,7 +19,7 @@ $total=productcontroller::cartItem();
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Orders</a>
+          <a class="nav-link active" aria-current="page" href="/myorders">Orders</a>
         </li>
         
         
@@ -34,7 +34,7 @@ $total=productcontroller::cartItem();
 
 
         <li class="nav-item ">
-          <a class="nav-link active" aria-current="page" href="#">Cart({{$total}})</a>
+          <a class="nav-link active" aria-current="page" href="/cartlist">Cart({{$total}})</a>
          
         </li>
         @if(Session::has('user'))
@@ -52,6 +52,7 @@ $total=productcontroller::cartItem();
   </ul>
   @else
   <a class="nav-link active" aria-current="page" href="/login">Login</a>
+  <a class="nav-link active" aria-current="page" href="/register">Register</a>
   @endif
 </div>
          </ul>
